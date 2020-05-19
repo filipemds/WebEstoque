@@ -1,0 +1,24 @@
+﻿@model IList<WebEstoque.Models.Mercadoria>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome do Produto</th>
+                <th>Preco</th>
+                <th>Quantidade</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mercadoria in Model)
+            {
+                <tr>
+                    <td>@mercadoria.Id</td>
+                    <td>@Html.ActionLink(mercadoria.Descricao, "Visualiza", new { id = mercadoria.Id })</td>
+                    <td>@mercadoria.Qtde_Inicial</td>
+                    <td id="quantidade@(mercadoria.Id)">@mercadoria.Qtde_Inicial</td>
+                </tr>
+            }
+        </tbody>
+    </table>

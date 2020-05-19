@@ -1,0 +1,27 @@
+﻿
+<form action="/Mercadoria/Adicionar" method="post">
+    <label for="descricao">Descrição:</label>
+    <input id="descricao" name="mercadoria.Descricao" value="@ViewBag.Mercadoria.Descricao" class="form-control" />
+    @Html.ValidationMessage("mercadoria.Descricao")
+
+    <label for="quantidade">Quantidade:</label>
+    <input id="quantidade" name="produto.Quantidade" value="@ViewBag.Produto.Quantidade" class="form-control" />
+    @Html.ValidationMessage("produto.Quantidade")
+
+    <label for="descricao">Descrição:</label>
+    <input id="descricao" name="produto.Descricao" value="@ViewBag.Produto.Descricao" class="form-control" />
+    @Html.ValidationMessage("produto.Descricao")
+
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" name="produto.CategoriaId" class="form-control">
+        @foreach (var categoria in ViewBag.Categorias)
+        {
+            <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+            </option>
+        }
+    </select>
+    @Html.ValidationMessage("produto.CategoriaId")
+
+    <input type="submit" value="Cadastrar" />
+</form>
