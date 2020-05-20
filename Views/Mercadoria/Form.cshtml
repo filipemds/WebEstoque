@@ -6,22 +6,7 @@
 
     <label for="quantidade">Quantidade:</label>
     <input id="quantidade" name="produto.Quantidade" value="@ViewBag.Produto.Quantidade" class="form-control" />
-    @Html.ValidationMessage("produto.Quantidade")
-
-    <label for="descricao">Descrição:</label>
-    <input id="descricao" name="produto.Descricao" value="@ViewBag.Produto.Descricao" class="form-control" />
-    @Html.ValidationMessage("produto.Descricao")
-
-    <label for="categoria">Categoria:</label>
-    <select id="categoria" name="produto.CategoriaId" class="form-control">
-        @foreach (var categoria in ViewBag.Categorias)
-        {
-            <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
-                @categoria.Nome
-            </option>
-        }
-    </select>
-    @Html.ValidationMessage("produto.CategoriaId")
+    @Html.ValidationMessage("mercadoria.Qtde_Inicial")
 
     <input type="submit" value="Cadastrar" />
 </form>
